@@ -18,3 +18,8 @@ tasks.jar {
         attributes["Main-Class"] = application.mainClass.get()
     }
 }
+
+tasks.shadowJar {
+    // Nötig, da unsere ShadowJar ggf. mehr als 65535 Dateien enthält.
+    isZip64 = true
+}
